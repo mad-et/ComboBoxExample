@@ -18,9 +18,19 @@ namespace ComboBoxExample.ViewModel
             Elements = new List<Element>();
         }
 
-        #region Categories       
+        
+        #region Categories  
+        /// <summary>
+        /// Свойство, привязанное к верхнему комбобоксу
+        /// </summary>
         public List<Category> Categories { get; set; }
-       
+
+        /// <summary>
+        /// Выбранный элемент в верхнем комбобоксе. 
+        /// Это свойство "развернули", т.е. используем не сокращенную форму типа public Category SelectedCategory { get; set; } специально, 
+        /// чтобы в части set (в момент выбора значения из верхнего комбобокса,
+        /// вызвать поиск элементов из категории и занести их во второй комбобокс
+        /// </summary>
         private Category selectedCategory;
         public Category SelectedCategory
         {
@@ -33,8 +43,15 @@ namespace ComboBoxExample.ViewModel
         }
         #endregion
 
-        #region Types       
-        public List<Element> Elements { get; set; }        
+        #region Elements   
+        /// <summary>
+        /// Свойство, привязанное к нижнему комбобоксу
+        /// </summary>
+        public List<Element> Elements { get; set; }
+
+        /// <summary>
+        /// Выбранный элемент в нижнем комбобоксе.
+        /// </summary>
         public Element SelectedElement { get; set; }
         #endregion
     }
