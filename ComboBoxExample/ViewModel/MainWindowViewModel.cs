@@ -18,11 +18,10 @@ namespace ComboBoxExample.ViewModel
             Elements = new List<Element>();
         }
 
-        
-        #region Categories  
         /// <summary>
         /// Свойство, привязанное к верхнему комбобоксу
         /// </summary>
+        #region Categories       
         public List<Category> Categories { get; set; }
 
         /// <summary>
@@ -43,11 +42,18 @@ namespace ComboBoxExample.ViewModel
         }
         #endregion
 
-        #region Elements   
+        #region Types   
         /// <summary>
         /// Свойство, привязанное к нижнему комбобоксу
         /// </summary>
-        public List<Element> Elements { get; set; }
+        private List<Element> element;
+        public List<Element> Elements {
+            get => element;
+            set
+            {
+                SetProperty(ref element, value);               
+            }
+        }
 
         /// <summary>
         /// Выбранный элемент в нижнем комбобоксе.
